@@ -1,0 +1,27 @@
+
+<link href='https://fonts.googleapis.com/css?family=Bree+Serif'
+	  rel='stylesheet'
+	  type='text/css'>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1 align="center">{{ title }}</h1>
+
+<div style="width:100%;text-align:center">
+<form method="post">
+    {{ form.csrf_token( ) }}
+    {{ form.search.label }}{{ form.search }}
+    {{ form.submit }}
+
+</form>
+</div>
+</body>
+</html>

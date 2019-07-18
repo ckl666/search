@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+    <h1>The result is {{ result[0] }} </h1>
+    <hr>
+    <ul>
+        <li> {{result[0]}} </li>
+        {% for url in result[1:] %}
+            <li> <a href = '{{ url }}' target="_blank"> {{ url}} </a> </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

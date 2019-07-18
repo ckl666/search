@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Sreach agent</title>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--link rel="stylesheet" href="style.css"-->
+   
+ <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+		    top : 20px;
+            margin: 200px;
+            padding: 42px;
+            background: aliceblue;
+            font-weight: 500;
+            font-family: "Microsoft YaHei","宋体","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo;
+        }
+
+        #container {
+            width: 500px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+
+        form {
+            position: relative;
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        input, button {
+            border: none;
+            outline: none;
+        }
+
+        input {
+            width: 100%;
+            height: 42px;
+            padding-left: 13px;
+        }
+
+        button {
+            height: 60px;
+            width: 42px;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        /*搜索框*/
+        .bar1 input {
+        	height: 60px;
+        	width: 520px;
+            border: 2px solid #7BA7AB;
+            border-radius: 5px;
+            background: #F9F0DA;
+            color: #9E9C9C;
+        }
+        .bar1 button {
+            top : 0;
+		    right : 0;
+            background: #7BA7AB;
+            border-radius: 0 5px 5px 0;
+        }
+        .bar1 button:before {
+            content: "\f002";
+            font-family: FontAwesome;
+            font-size: 16px;
+            color: #F9F0DA;
+        }
+       .bar1 p{
+           font-size: 50px;
+           color: transparent;
+          -webkit-text-fill-color: floralwhite;     /*文字的填充色*/
+           -webkit-text-stroke: 1.2px #9E9C9C;
+           text-align:center;
+       }
+        .bg{
+        	position:absolute ;
+        	top: 0;
+        	left: 0;
+        	width: 100%;
+        	height: 100%;
+           
+        }
+    </style>
+</head>
+<body>
+	<img src="static/213.jpg" class="bg">
+	
+<div id="container">
+    <div class="search bar1">
+        <form action="/go" method="post">
+            <p >Our Search Agent</p>
+
+            {{ form.csrf_token( ) }}
+            {{ form.search.label }}{{ form.search(class="input-lg") }}{{ form.submit }}
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Our Search </title>
+	</head>
+	<style>
+	
+	#container{
+		height: 120px;
+		margin: 0 auto;
+	}
+	#tip{
+		height: 80px;
+		margin: 0 auto;
+	}
+	#d1{
+		height: 100px;
+		margin: 0 auto;
+
+	}
+	#navigation{
+      height: 50px;
+      margin: 0 auto;
+}
+	
+		.bar1 img{
+			height: 42px;
+			float: left;
+		}
+		.bar1 input{
+			height: 42px;
+			width: 250px;
+			margin: 0 auto ;
+			float: left;
+		}
+		.bar1 button{
+			height: 48px;
+			width: 100px;
+			margin: 0 auto;
+			float: left;
+		}
+
+		.bar2 p{
+			height: 48px;
+			width: 520px;
+			font-size: 12px;
+			margin: 0 auto;
+			float: left;
+		
+		}
+	
+		.bar4 p{
+			height: 48px;
+			width: 1000px;
+			margin: 0 auto;
+            text-align: center;
+			float: left;
+		}
+         .bar3{
+              width:560px;
+              height: 50px;
+              font:bold 0/50px Arial;
+              margin:0 auto;
+              background: #D0E9C6;
+              border-radius: 8px;
+              box-shadow: 0 7px 0 #DFF0D8;
+              float: left;
+            }
+         .bar3 a{
+              display: inline-block; 
+              float: left;
+               
+            }
+            .bar3 li{
+              position:relative;
+              display:inline-block;
+              padding:0 16px;
+              font-size: 14px;
+              text-shadow:1px 2px 4px rgba(0,0,0,.5);
+              list-style: none outside none;
+            }
+            .bar3 a,
+            .bar3 a:hover{
+              color:#fff;
+              text-decoration: none;
+            }
+
+	</style>
+	<body>
+	
+		<div id="container">
+			<div class="search bar1">
+       <!--form action="/go" method="post">
+
+           <input type="text"  placeholder="" />
+            <input type="submit"  value="搜索一下"/>
+        </form-->
+        <!--form action="go" method="post">
+            <input type="text"  name="search" />
+            <button type="submit">搜索一下</button>
+        </form-->
+         <form action="/go" method="post">
+            <img src="static/111.png"  width="88px">
+        	<img src="static/2.png">
+            {{ form1.csrf_token( ) }}
+            {{ form1.search.label }}{{ form1.search }}{{ form1.submit }}
+        </form>
+      </div>
+      	<div id="navigation"></div>
+            <div class="search bar2">
+          <p align="left">为您找到相关结果为{{ result[0] }}约{{ result | length-1 }}个</p>
+            </div>
+      <div id="tip"></div>
+      	<div class="search bar3">
+      		 <ul>
+        <li><a href="">网页</a></li>
+        <li><a href="">图片</a></li>
+      		 </ul>
+      </div>
+
+      <div id="d1"></div>
+            <div class="search bar4">
+    <ul>
+        <li> {{result[0]}} </li>
+    {% if result | length == 1 %}
+        <h3>结果为0</h3>
+    {% else %}
+        {% for url in result[1:] %}
+            <li> <a href = '{{ url }}' target="_blank"> {{ url}} </a> </li>
+        {% endfor %}
+    {% endif %}
+    </ul>
+      	</div>
+      	</div>
+	</body>
+</html>
