@@ -8,7 +8,7 @@
 - 接着python3 slaveServer.py运行从节点，负责存储,该节点上运行着爬虫程序，为了减少网络的传输，降低编程的难度，将爬虫程序直接运行在存储节点上，对数据直接可以写入数据库中(需要安转jieba库)
 
 - 非网页版的执行 python3 webServer.py 在masterServer的终端看到有新的链接建立，之后在webServer所在的终端输入查询的内容即可
-- 如果想要运行网页版的进入flask_test目录，执行 python3 first_flask.py runserver 然后在浏览器输入(127.0.0.1:5000)即可访问
+- 如果想要运行网页版的进入flask目录，执行 python3 first_flask.py runserver 然后在浏览器输入(127.0.0.1:5000)即可访问
     （网页版的需要安转flask框架）
     
 - 支持多个slave节点,如果想要运行多个slaveServer在一台机器上，
